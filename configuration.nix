@@ -97,7 +97,6 @@
     git
     clang_14
     clang-tools
-    fishPlugins.tide
     gnome.gnome-tweaks
     vscode
     discord
@@ -110,8 +109,7 @@
     alacritty
   ];
 
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.nushell;
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
