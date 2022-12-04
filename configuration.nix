@@ -105,7 +105,6 @@
     zoom-us
     google-chrome
     firefox
-    lapce
   ];
 
   users.defaultUserShell = pkgs.nushell;
