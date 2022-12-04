@@ -95,8 +95,8 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     git
-    lapce
-    clang
+    clang_14
+    clang-tools
     vscode
     discord
     skypeforlinux
