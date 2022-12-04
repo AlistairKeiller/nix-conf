@@ -105,7 +105,7 @@
     zoom-us
     google-chrome
     firefox
-    helix
+    lapce
   ];
 
   users.defaultUserShell = pkgs.nushell;
