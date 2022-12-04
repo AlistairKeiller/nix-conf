@@ -106,7 +106,6 @@
     google-chrome
     firefox
     helix
-    alacritty
   ];
 
   users.defaultUserShell = pkgs.nushell;
