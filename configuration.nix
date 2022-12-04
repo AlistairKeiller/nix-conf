@@ -97,6 +97,8 @@
     git
     clang_14
     clang-tools
+    fishPlugins.tide
+    gnome.gnome-tweaks
     vscode
     discord
     skypeforlinux
@@ -104,13 +106,14 @@
     zoom-us
     google-chrome
     firefox
+    helix
   ];
 
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   fonts.fonts = with pkgs; [
-    jetbrains-mono
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   nix.settings.auto-optimise-store = true;
