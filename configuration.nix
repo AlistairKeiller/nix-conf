@@ -107,6 +107,7 @@
     google-chrome
     firefox
     helix
+    alacritty
   ];
 
   programs.fish.enable = true;
