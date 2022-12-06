@@ -105,6 +105,8 @@
     zoom-us
     google-chrome
     firefox
+    nodejs
+    texlive.combined.scheme-full
   ];
 
   users.defaultUserShell = pkgs.nushell;
