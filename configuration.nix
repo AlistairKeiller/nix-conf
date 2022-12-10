@@ -101,12 +101,12 @@
     vscode
     discord
     skypeforlinux
-    teams
-    zoom-us
     google-chrome
     firefox
     nodejs
     texlive.combined.scheme-full
+    cargo
+    rustc
   ];
 
   users.defaultUserShell = pkgs.nushell;
