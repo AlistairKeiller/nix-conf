@@ -108,8 +108,9 @@
     texlive.combined.scheme-full
     clang
     clang-tools
-    cargo
-    rustc
+    rustup
+    wasm-pack
+    openssl
     nodejs
   ];
 
