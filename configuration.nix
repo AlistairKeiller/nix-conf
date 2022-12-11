@@ -92,20 +92,26 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-    clang-tools
     gnome.gnome-tweaks
-    texlive.combined.scheme-full
-    vscode
+    (vscode-with-extensions.override {
+    vscodeExtensions = with vscode-extensions; [
+    	matklad.rust-analyzer
+    	github.copilot
+    	llvm-vs-code-extensions.vscode-clangd
+    	james-yu.latex-workshop
+    ];})
     discord
     skypeforlinux
     google-chrome
     firefox
-    nodejs
+    git
+    texlive.combined.scheme-full
+    clang-tools
     cargo
-    cmake
-    ninja
+    rustc
+    nodejs
   ];
+
 
   users.defaultUserShell = pkgs.nushell;
 
