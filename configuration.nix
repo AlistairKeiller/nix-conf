@@ -110,7 +110,6 @@
     clang-tools
     rustup
     wasm-pack
-    openssl
     nodejs
   ];
 
