@@ -106,6 +106,7 @@
     firefox
     git
     texlive.combined.scheme-full
+    clang
     clang-tools
     cargo
     rustc
