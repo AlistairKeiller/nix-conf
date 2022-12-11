@@ -92,21 +92,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
     git
-    clang_14
     clang-tools
     gnome.gnome-tweaks
+    texlive.combined.scheme-full
     vscode
     discord
     skypeforlinux
     google-chrome
     firefox
     nodejs
-    texlive.combined.scheme-full
     cargo
-    rustc
+    cmake
+    ninja
   ];
 
   users.defaultUserShell = pkgs.nushell;
