@@ -99,7 +99,15 @@
     	github.copilot
     	llvm-vs-code-extensions.vscode-clangd
     	james-yu.latex-workshop
-    ];})
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "unocss";
+        publisher = "antfu";
+        version = "0.47.6";
+        sha256 = "460937488281cc3a28e6b2405d6159bb032d004319562a25958563118bf22db0";
+      }
+    ];
+    })
     discord
     skypeforlinux
     google-chrome
@@ -110,7 +118,9 @@
     clang-tools
     rustup
     wasm-pack
+    binaryen
     nodejs
+    zola
   ];
 
 
