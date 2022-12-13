@@ -92,7 +92,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
     (vscode-with-extensions.override {
     vscodeExtensions = with vscode-extensions; [
     	matklad.rust-analyzer
@@ -108,19 +107,14 @@
       }
     ];
     })
+    git
+    texlive.combined.scheme-full
+    clang-tools
+    gnome.gnome-tweaks
     discord
     skypeforlinux
     google-chrome
     firefox
-    git
-    texlive.combined.scheme-full
-    clang
-    clang-tools
-    rustup
-    wasm-pack
-    binaryen
-    nodejs
-    zola
   ];
 
 
