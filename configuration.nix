@@ -116,11 +116,10 @@
     skypeforlinux
     google-chrome
     firefox
+    fishPlugins.tide
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # users.defaultUserShell = pkgs.nushell;
+  users.defaultUserShell = pkgs.fish;
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -132,7 +131,10 @@
   };
 
   nix = {
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
     gc = {
       automatic = true;
       dates = "weekly";
