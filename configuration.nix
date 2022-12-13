@@ -98,6 +98,7 @@
     	github.copilot
     	llvm-vs-code-extensions.vscode-clangd
     	james-yu.latex-workshop
+    	vscode-extensions.bbenoist.nix
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "unocss";
@@ -117,20 +118,27 @@
     firefox
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  users.defaultUserShell = pkgs.nushell;
+  # users.defaultUserShell = pkgs.nushell;
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
-  nix.settings.auto-optimise-store = true;
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://nixos.org/channels/nixos-unstable";
   };
+
+  nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  }
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -158,5 +166,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
