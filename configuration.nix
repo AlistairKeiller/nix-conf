@@ -98,7 +98,8 @@
     	github.copilot
     	llvm-vs-code-extensions.vscode-clangd
     	james-yu.latex-workshop
-    	vscode-extensions.bbenoist.nix
+    	bbenoist.nix
+      mkhl.direnv
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "unocss";
