@@ -98,7 +98,7 @@
     	github.copilot
     	llvm-vs-code-extensions.vscode-clangd
     	james-yu.latex-workshop
-    	bbenoist.nix
+      bbenoist.nix
       mkhl.direnv
     ];})
     git
