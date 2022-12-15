@@ -113,7 +113,7 @@
     bottles
     popsicle
   ];
-  
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -121,14 +121,18 @@
       direnv hook fish | source
     '';
   };
+
   users.defaultUserShell = pkgs.fish;
+
   fonts = {
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
   };
+
   system.autoUpgrade.enable = true;
+
   nix = {
     settings = {
       auto-optimise-store = true;
