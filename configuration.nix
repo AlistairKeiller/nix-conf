@@ -118,9 +118,9 @@
     firefox
     fishPlugins.tide
     direnv
+    bottles
+    popsicle
   ];
-
-  services.flatpak.enable = true;
 
   programs.fish = {
     enable = true;
