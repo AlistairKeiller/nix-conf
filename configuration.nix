@@ -139,10 +139,7 @@
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
   };
 
-  system.autoUpgrade = {
-    enable = true;
-    channel = "https://nixos.org/channels/nixos-unstable";
-  };
+  system.autoUpgrade.enable = true;
 
   nix = {
     settings = {
