@@ -120,6 +120,8 @@
     direnv
   ];
 
+  services.flatpak.enable = true;
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
