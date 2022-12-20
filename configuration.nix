@@ -100,10 +100,21 @@
     	james-yu.latex-workshop
       bbenoist.nix
       mkhl.direnv
-    ];})
+    ]
+    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "competitive-programming-helper";
+        publisher = "DivyanshuAgrawal";
+        version = "5.9.2";
+        sha256 = "e64563545c46d416bf28c7e8fe01ad9f81a334bf95de54c2d5de2612e05d4c26";
+      }
+    ]
+    ;})
+    helix
     git
-    texlive.combined.scheme-full
+    # texlive.combined.scheme-full
     clang-tools
+    clang
     discord
     skypeforlinux
     google-chrome
@@ -111,7 +122,6 @@
     fishPlugins.tide
     direnv
     bottles
-    popsicle
   ];
 
   programs.fish = {
