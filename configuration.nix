@@ -3,11 +3,14 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      (import "${home-manager}/nixos")
     ];
 
   # Bootloader.
@@ -84,56 +87,36 @@
     isNormalUser = true;
     description = "Alistair Keiller";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
   };
+
+  programs.fish.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    (vscode-with-extensions.override {
-    vscodeExtensions = with vscode-extensions; [
-    	matklad.rust-analyzer
-    	github.copilot
-    	llvm-vs-code-extensions.vscode-clangd
-    	james-yu.latex-workshop
-      bbenoist.nix
-      mkhl.direnv
-    ]
-    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "competitive-programming-helper";
-        publisher = "DivyanshuAgrawal";
-        version = "5.9.2";
-        sha256 = "e64563545c46d416bf28c7e8fe01ad9f81a334bf95de54c2d5de2612e05d4c26";
-      }
-    ]
-    ;})
-    helix
-    git
-    # texlive.combined.scheme-full
-    clang-tools
-    clang
-    discord
-    skypeforlinux
-    google-chrome
-    firefox
-    fishPlugins.tide
-    direnv
-    bottles
-  ];
-
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting ""
-      direnv hook fish | source
-    '';
+  home-manager.users.alistair = {
+    home.packages = with pkgs; [
+      fishPlugins.tide
+      clang-tools
+      clang
+      discord
+      skypeforlinux
+      bottles
+    ];
+    programs = {
+      direnv.enable = true;
+      helix.enable = true;
+      firefox.enable = true;
+      git = {
+        enable = true;
+        userEmail = "alistair@keiller.net";
+        userName = "alistiar";
+      };
+    };
+    home.stateVersion = "22.11";
   };
-
-  users.defaultUserShell = pkgs.fish;
-
+  
   fonts = {
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -180,5 +163,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "22.11"; # Did you read the comment?
+
 }
