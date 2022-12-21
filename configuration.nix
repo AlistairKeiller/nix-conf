@@ -98,8 +98,11 @@ in
   home-manager.users.alistair = {
     home.packages = with pkgs; [
       fishPlugins.tide
-      clang-tools
       clang
+      clang-tools
+      texlab
+      nil
+      rust-analyzer
       discord
       skypeforlinux
       bottles
