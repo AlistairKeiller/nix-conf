@@ -106,17 +106,25 @@ in
     ];
     programs = {
       direnv.enable = true;
-      helix.enable = true;
       firefox.enable = true;
+      alacritty.enable = true;
+      helix = {
+        enable = true;
+        settings = {
+          theme = "onedark";
+        };
+      };
       git = {
         enable = true;
         userEmail = "alistair@keiller.net";
         userName = "alistiar";
       };
     };
+    home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
+    home.pointerCursor.name = "Adwaita";
     home.stateVersion = "22.11";
   };
-  
+
   fonts = {
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
