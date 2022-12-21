@@ -117,7 +117,7 @@ in
       git = {
         enable = true;
         userEmail = "alistair@keiller.net";
-        userName = "alistiar";
+        userName = "alistair";
       };
     };
     home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
