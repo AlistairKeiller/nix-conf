@@ -111,7 +111,7 @@ in
       google-chrome
       prismlauncher
       openjdk17-bootstrap
-      nodePackages.vscode-langservers-extracted
+      nodePackages."@tailwindcss/language-server"
     ];
     programs = {
       direnv.enable = true;
