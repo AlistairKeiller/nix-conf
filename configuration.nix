@@ -109,6 +109,7 @@ in
       skypeforlinux
       bottles
       google-chrome
+      minecraft
     ];
     programs = {
       direnv.enable = true;
