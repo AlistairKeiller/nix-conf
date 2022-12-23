@@ -109,12 +109,15 @@ in
       skypeforlinux
       bottles
       google-chrome
-      minecraft
+      prismlauncher
+      openjdk17-bootstrap
+      nodePackages.vscode-langservers-extracted
     ];
     programs = {
       direnv.enable = true;
       firefox.enable = true;
       alacritty.enable = true;
+      gh.enable = true;
       helix = {
         enable = true;
         settings = {
