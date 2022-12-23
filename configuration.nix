@@ -95,6 +95,8 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.steam.enable = true;
+
   home-manager.users.alistair = {
     home.packages = with pkgs; [
       fishPlugins.tide
@@ -106,6 +108,7 @@ in
       discord
       skypeforlinux
       bottles
+      google-chrome
     ];
     programs = {
       direnv.enable = true;
@@ -127,7 +130,7 @@ in
     home.pointerCursor.name = "Adwaita";
     home.stateVersion = "22.11";
   };
-
+  
   fonts = {
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
