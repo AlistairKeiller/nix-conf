@@ -110,7 +110,7 @@ in
       bottles
       google-chrome
       prismlauncher
-      openjdk17-bootstrap
+      jdk
       nodePackages."@tailwindcss/language-server"
     ];
     programs = {
