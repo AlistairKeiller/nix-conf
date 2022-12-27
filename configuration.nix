@@ -88,8 +88,6 @@ in
     home.packages = with pkgs; [
       xdg-utils
       wl-clipboard
-      grim
-      slurp
       clang
       clang-tools
       texlab
@@ -101,6 +99,8 @@ in
       bottles
       google-chrome
       fishPlugins.tide
+      prismlauncher
+      jdk
     ];
     wayland.windowManager.sway = {
       enable = true;
@@ -113,6 +113,7 @@ in
         ];
         keybindings = lib.mkOptionDefault {
           "${modifier}+q" = "kill";
+          "${modifier}+b" = "exec firefox";
         };
       };
     };
@@ -182,5 +183,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
