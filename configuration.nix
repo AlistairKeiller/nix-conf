@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 in
@@ -65,7 +65,7 @@ in
 
   security.polkit.enable = true;
   hardware.opengl.enable = true;
-  services.dbus.enable = true; # should be able to remove
+  services.dbus.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -86,6 +86,10 @@ in
 
   home-manager.users.alistair = {
     home.packages = with pkgs; [
+      xdg-utils
+      wl-clipboard
+      grim
+      slurp
       clang
       clang-tools
       texlab
@@ -107,6 +111,9 @@ in
           { command = "discord"; }
           { command = "skypeforlinux"; }
         ];
+        keybindings = lib.mkOptionDefault {
+          "${modifier}+q" = "kill";
+        };
       };
     };
     programs = {
