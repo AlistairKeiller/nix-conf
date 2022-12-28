@@ -93,7 +93,9 @@ in
       texlab
       nil
       rust-analyzer
+      nodejs
       nodePackages."@tailwindcss/language-server"
+      (python310.withPackages(x: with x; [ python-lsp-server pyflakes ]))
       discord
       skypeforlinux
       bottles
