@@ -107,7 +107,7 @@ in
     ];
     wayland.windowManager.sway = {
       enable = true;
-      config = rec {
+      config = {
         modifier = "Mod4";
         terminal = "alacritty";
         startup = [
@@ -115,8 +115,6 @@ in
           { command = "skypeforlinux"; }
         ];
         keybindings = lib.mkOptionDefault {
-          "${modifier}+q" = "kill";
-          "${modifier}+b" = "exec firefox";
           "Print" = "exec grimshot save area";
         };
       };
