@@ -88,6 +88,7 @@ in
     home.packages = with pkgs; [
       xdg-utils
       wl-clipboard
+      sway-contrib.grimshot
       clang
       clang-tools
       texlab
@@ -116,6 +117,7 @@ in
         keybindings = lib.mkOptionDefault {
           "${modifier}+q" = "kill";
           "${modifier}+b" = "exec firefox";
+          "Print" = "exec grimshot save area";
         };
       };
     };
@@ -135,6 +137,8 @@ in
         userName = "alistair";
       };
     };
+    home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
+    home.pointerCursor.name = "Adwaita";
     home.stateVersion = "22.11";
   };
 
