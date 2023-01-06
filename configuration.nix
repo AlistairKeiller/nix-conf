@@ -83,6 +83,7 @@ in
         exec sway
       end'';
   };
+  programs.steam.enable = true;
 
   home-manager.users.alistair = {
     home.packages = with pkgs; [
@@ -94,16 +95,19 @@ in
       texlab
       nil
       rust-analyzer
+      clippy
       nodejs
       nodePackages."@tailwindcss/language-server"
       (python310.withPackages(x: with x; [ python-lsp-server pyflakes ]))
+      jdk
+      jdt-language-server
       discord
       skypeforlinux
       bottles
       google-chrome
       fishPlugins.tide
       prismlauncher
-      jdk
+      asciinema
     ];
     wayland.windowManager.sway = {
       enable = true;
