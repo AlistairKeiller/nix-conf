@@ -108,6 +108,7 @@ in
       fishPlugins.tide
       prismlauncher
       asciinema
+      gnome.nautilus
     ];
     wayland.windowManager.sway = {
       enable = true;
