@@ -91,14 +91,13 @@ in
       sway-contrib.grimshot
       clang
       clang-tools
-      texlab
       nil
       rust-analyzer
       clippy
       julia
       discord
       skypeforlinux
-      google-chrome
+      chromium
       fishPlugins.tide
       asciinema
       gnome.nautilus
@@ -131,6 +130,9 @@ in
         enable = true;
         userEmail = "alistair@keiller.net";
         userName = "Alistair";
+      };
+      vscode = {
+        enable = true;
       };
     };
     home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
