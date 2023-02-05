@@ -83,7 +83,6 @@ in
         exec sway
       end'';
   };
-  programs.steam.enable = true;
 
   home-manager.users.alistair = {
     home.packages = with pkgs; [
@@ -96,17 +95,11 @@ in
       nil
       rust-analyzer
       clippy
-      nodejs
-      nodePackages."@tailwindcss/language-server"
-      (python310.withPackages(x: with x; [ python-lsp-server pyflakes ]))
-      jdk
-      jdt-language-server
+      julia
       discord
       skypeforlinux
-      bottles
       google-chrome
       fishPlugins.tide
-      prismlauncher
       asciinema
       gnome.nautilus
     ];
@@ -137,7 +130,7 @@ in
       git = {
         enable = true;
         userEmail = "alistair@keiller.net";
-        userName = "alistair";
+        userName = "Alistair";
       };
     };
     home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
